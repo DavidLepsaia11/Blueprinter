@@ -19,6 +19,7 @@ namespace Blueprinter.Presentation
         {
             _view = view;    
             _appController = appController;
+            _view.Presenter = this;
         }
 
         public void RunBlueprintManager()
