@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blueprinter.Presentation
+namespace Blueprinter.Core.Services
 {
-    public interface IPresenter<TView>
+    public interface IContext
     {
-        TView View { get;}
-        void Run();
+        IEnumerable<BlueprintInfo> GetAllBlueprints();
     }
 }

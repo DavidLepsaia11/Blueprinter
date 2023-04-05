@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blueprinter.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace Blueprinter.Presentation
     public interface IApplicationController
     {
         void RunBlueprintManager();
+        IContext Context { get; }
     }
 }

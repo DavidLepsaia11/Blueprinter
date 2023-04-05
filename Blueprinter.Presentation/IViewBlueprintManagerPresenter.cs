@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Blueprinter.Presentation
 {
-    public interface IPresenter<TView>
+    public interface IViewBlueprintManagerPresenter : IPresenter<IViewBlueprintManager>
     {
-        TView View { get;}
-        void Run();
+
     }
 }

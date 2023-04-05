@@ -27,5 +27,10 @@ namespace Blueprinter
         {
             _presenter.RunBlueprintManager();
         }
+
+        public void Run()
+        {
+            ShowDialog();
+        }
     }
 }

@@ -6,29 +6,26 @@ using System.Threading.Tasks;
 
 namespace Blueprinter.Presentation
 {
-    public class ViewMainPresenter : IViewMainPresenter
+    public class ViewBlueprintManagerPresenter : IViewBlueprintManagerPresenter
     {
-        private readonly IViewMain _view;
         private readonly IApplicationController _appController;
-        public IViewMain View 
+        private readonly IViewBlueprintManager _view;
+
+        public IViewBlueprintManager View
         {
             get => _view;
         }
 
-        public ViewMainPresenter(IViewMain view, IApplicationController appController )
+        public ViewBlueprintManagerPresenter(IViewBlueprintManager view, IApplicationController appController)
         {
-            _view = view;    
+            _view = view;
             _appController = appController;
             _view.Presenter = this;
         }
 
-        public void RunBlueprintManager()
-        {
-            _appController.RunBlueprintManager();
-        }
-
         public void Run()
         {
+            _view.Blueprints = _appController.Context.GetAllBlueprints();
             _view.Run();
         }
     }
